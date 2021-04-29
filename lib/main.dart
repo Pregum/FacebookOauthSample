@@ -74,6 +74,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             prettyPrint(_accessToken.toJson()),
                           )
                         : Container(),
+                    if (_userData != null)
+                      Text(
+                          'url: ${((_userData["picture"] as Map)["data"] as Map)["url"]}'),
+                    if (_userData != null)
+                      Container(
+                        child: Image.network(
+                          '${((_userData["picture"] as Map)["data"] as Map)["url"]}',
+                        ),
+                      ),
                     SizedBox(height: 20),
                     CupertinoButton(
                       color: Colors.blue,
